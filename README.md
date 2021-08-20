@@ -1,4 +1,4 @@
-# vue-instagram
+# vue-list
 
 
 yarn global add @vue/cli
