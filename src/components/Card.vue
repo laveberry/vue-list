@@ -1,10 +1,11 @@
 <template>
     <div>
+        <br>
         <h4>{{제품데이터.title}}</h4>
         <p>{{제품데이터.caption}}</p>
         <img :src="제품데이터.img" :alt="제품데이터.title">
         <p>{{제품데이터.price}}</p>
-        <span>{{제품데이터}}</span>
+        <br>
     </div>
 </template>
 

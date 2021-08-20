@@ -5,19 +5,19 @@ export default[
     {
         title:"애플워치",
         caption: "현대인의 필수품!",
-        price:'300,000',
+        price:300000,
         img:'../assets/logo.png'
     },
     {
         title:"아이폰",
         caption: "폰은 아이폰이지",
-        price:'1,200,000',
+        price: 1200000,
         img: asset
     },
     {
         title:"스타벅스컵",
         caption: "인싸 필수템",
-        price:'19,000',
+        price: 19000,
         img: asset
     },
 ]
