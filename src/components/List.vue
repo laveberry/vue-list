@@ -34,10 +34,7 @@
     <b-col cols="5">2 of 3 (wider)</b-col>
     <b-col>3 of 3</b-col>
   </b-row>
-  
 </b-container>
-
-
 
 
 
@@ -57,7 +54,8 @@ export default {
         리스트: [ '리셋', '50만원 미만', '고가순', '저가순'],
         리스트토글 : false,
         기본제품들 : Data, //원본데이터
-        제품들 : [...Data] //원본데이터 카피
+        제품들 : [...Data], //원본데이터 카피
+        초기 : [...Data], //초기화를 위한 데이터 카피
         }
     },
     methods: {
@@ -65,8 +63,11 @@ export default {
         this.리스트토글 = !this.리스트토글;
         },
 
+        // ※filter, sort 메소드 : 원본데이터 변형 가져옴
+
         //50만원 미만
         sortLimitHalfMillion :function(){
+          this.resetData();
           this.제품들 = this.기본제품들.filter(function(data){
             return data.price < 500000;
           });
@@ -76,6 +77,7 @@ export default {
         sortDesc(){
           //sort() : 배열안의 원소 정렬
           this.제품들 = this.기본제품들;
+          // this.resetData();//이거쓰면 작동xxxx
           this.제품들.sort(function(a,b){
             return b.price - a.price; //내림차순
           });
@@ -84,15 +86,19 @@ export default {
         //저가순
         sortAsce : function(){
           this.제품들 = this.기본제품들;
+          // this.resetData();
           this.제품들.sort(function(a,b){
             return a.price - b.price; //오름차순
           });
         },
 
-        //리스트 리셋??★
+        //리스트 리셋
         resetData(){
-          this.제품들 = [...Data];
+          /////이거 다 안됨!!!! ★
+          // this.제품들 = [...Data];
+          // this.제품들 = Data;
           // this.제품들 = this.기본제품들;
+          this.제품들 = this.초기;
         },
     },
 
